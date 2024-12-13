@@ -25,7 +25,16 @@ namespace ProductApp.Controllers
   [HttpPost, ValidateAntiForgeryToken]
   public IActionResult Create(Category category)
   {
-   if (ModelState.IsValid) { _context.Categories.Add(category); _context.SaveChanges(); return RedirectToAction(nameof(Index)); }
+
+   if (ModelState.IsValid)
+   {
+    bool isDuplicate = _context.Categories.Any(c => c.CategoryName == category.CategoryName);
+    if (isDuplicate)
+    {
+     ModelState.AddModelError("CategoryName", "This category already exists."); return View(category);
+    }
+    _context.Categories.Add(category); _context.SaveChanges(); return RedirectToAction(nameof(Index));
+   }
    return View(category);
   }
 

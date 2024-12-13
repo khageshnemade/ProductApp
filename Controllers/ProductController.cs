@@ -55,11 +55,17 @@ namespace ProductApp.Controllers
   {
    if (product != null && product.ProductName != null && product.CategoryId != null)
    {
+    bool isDuplicate = _context.Products.Any(p => p.ProductName == product.ProductName && p.CategoryId == product.CategoryId);
+    ViewBag.categories = _context.Categories.ToList();
+    if (isDuplicate)
+    {
+     ModelState.AddModelError("ProductName", "Produt already exist in selected Category");
+     return View(product);
+    }
     product.Category = _context.Categories.FirstOrDefault(p => p.CategoryId == product.CategoryId);
     _context.Products.Add(product);
     _context.SaveChanges(); return RedirectToAction(nameof(Index));
    }
-   ViewBag.categories = _context.Categories.ToList();
    return View(product);
   }
   [HttpGet]
