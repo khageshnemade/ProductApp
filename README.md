@@ -5,6 +5,7 @@ then add Connection string in appsetting.json add Servername DatabaseName in con
   "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=Nimap;Trusted_Connection=True;MultipleActiveResultSets=true"
  }
 ```
+and use command ```update-database``` to update db and tables 
 
 ### Add following data in sql this is raw data for checking purpose
 ```
@@ -175,9 +176,13 @@ VALUES
 ### 5.Edit Category
 ![image](https://github.com/user-attachments/assets/40ea041e-1371-4173-90f6-faa1b24ed025)
 
+
 ### 5.Delete Category
 ![image](https://github.com/user-attachments/assets/8bdfff2c-029e-426a-be80-3181d8cd61a1)
 
 
+Project also contains Validations using annotations and  partial validation script
+
+![image](https://github.com/user-attachments/assets/fed68e08-ae1c-44f9-a651-991d4ceccc09)
 
 
