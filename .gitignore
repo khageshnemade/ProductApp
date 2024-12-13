@@ -1,0 +1,26 @@
+﻿# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Rider and VS Code IDE files
+.idea/
+.vscode/
+.vscode/settings.json
+
+# Ignore files containing sensitive information
+secrets.json
+*.env
+appsettings.Development.json
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore publish output
+publish/

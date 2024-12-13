@@ -1,0 +1,13 @@
+﻿@model Category
+<h2 class="m-2">Create Category</h2>
+<form asp-action="Create">
+ <div asp-validation-summary="All" class="text-danger"></div>
+
+ <label class="m-2 fs-5" asp-for="CategoryName"></label>
+ <input class="form-control" asp-for="CategoryName"/><br />
+ <button class="btn btn-primary " type="submit">Save</button>
+</form>
+
+@section Scripts {
+ <partial name="_ValidationScriptsPartial" />
+}

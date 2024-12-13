@@ -1,0 +1,13 @@
+﻿@model Category
+<h2>Edit Category</h2>
+<form asp-action="Edit">
+ <div asp-validation-summary="All" class="text-danger"></div>
+
+ <input type="hidden" asp-for="CategoryId" />
+ <label class="fs-5" asp-for="CategoryName"></label>
+ <input asp-for="CategoryName" class="form-control m-3" placeholder="Enter Category Name" />
+ <button type="submit" class="btn btn-primary">Save</button>
+</form>
+@section Scripts {
+ <partial name="_ValidationScriptsPartial" />
+}

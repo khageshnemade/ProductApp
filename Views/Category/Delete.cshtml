@@ -1,0 +1,15 @@
+﻿@model Category
+<h2>Delete Category</h2>
+
+<form asp-action="Delete" asp-controller="Category">
+ <div asp-validation-summary="All" class="text-danger"></div>
+
+ <input type="hidden" asp-for="CategoryId" />
+ <label class="fs-5">Category Name:</label><div class="form-check fs-5">@Model.CategoryName</div>
+ Are you sure to delete this Category<br />
+ <button type="submit" class="btn btn-danger">Delete</button>
+ <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+@section Scripts {
+ <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,23 @@
+﻿@model Product
+
+<h2>Create Product</h2><br />
+
+<form method="post" asp-action="Create">
+ <div asp-validation-summary="All" class="text-danger"></div>
+
+<label class="fs-5" asp-for="ProductName"></label> <input class="form-control" asp-for="ProductName" placeholder="Enter Product Name" />
+<label class="fs-5" asp-for="CategoryId"></label>
+<select class="form-control" asp-for="CategoryId">
+  @foreach (var category in ViewBag.categories)
+  {
+   <option value="@category.CategoryId">@category.CategoryName</option>
+  
+  }
+ </select>
+
+ <br />
+ <button type="submit" class="btn btn-outline-success">Save</button>
+</form>
+@section Scripts {
+ <partial name="_ValidationScriptsPartial" />
+}
