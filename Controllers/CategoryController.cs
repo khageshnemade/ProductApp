@@ -13,9 +13,14 @@ namespace ProductApp.Controllers
    _context = appDbContext;
   }
 
-  public IActionResult Index()
+  public IActionResult Index(int page = 1, int pageSize = 1)
   {
-   var categories = _context.Categories.ToList();
+   int totalCount = _context.Categories.Count();
+   ViewBag.TotalCount = totalCount;
+   var categories = _context.Categories.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+   ViewBag.CurrentPage = page;
+   ViewBag.PageSize = pageSize;
+   ViewBag.TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
    return View(categories);
   }
   public IActionResult Create()
