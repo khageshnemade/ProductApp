@@ -185,4 +185,26 @@ Project also contains Validations using annotations and  partial validation scri
 
 ![image](https://github.com/user-attachments/assets/fed68e08-ae1c-44f9-a651-991d4ceccc09)
 
+# Added Features
+### 1.Add Pagination on category Page
+![image](https://github.com/user-attachments/assets/ec20ff40-7c05-4e7f-8937-407aa0e2fed7)
+
+### 2. Added Service interfaces and classes with async methods 
+![image](https://github.com/user-attachments/assets/02bf7949-f1ce-4445-9992-837ae6023fd5)
+
+### 3.Duplicate entry validation for Products and Categories is implemented in Create and Edit IactionMethods
+
+![image](https://github.com/user-attachments/assets/b789a9df-91c9-4f8f-a646-727415b1e9c7)
+
+![image](https://github.com/user-attachments/assets/8442e80e-698b-48df-8d78-494bc3f4d6fd)
+
+![image](https://github.com/user-attachments/assets/463ba640-2e1e-48a5-8cae-7d27dff48ad0)
+
+![image](https://github.com/user-attachments/assets/94f95d99-0cc0-4a77-896d-1a085f8647d9)
+
+
+
+
+
+
 
