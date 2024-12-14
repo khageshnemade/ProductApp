@@ -31,7 +31,9 @@ namespace ProductApp.Services
 
   public async Task<bool> UpdateCategoryAsync(Category category)
   {
-   _context.Categories.Update(category);
+   var existingCategory = await _context.Categories.FindAsync(category.CategoryId);
+   if (existingCategory == null) return false;
+   existingCategory.CategoryName = category.CategoryName;
    return await _context.SaveChangesAsync() > 0;
   }
 
