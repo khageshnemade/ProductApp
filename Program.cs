@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProductApp.Data;
+using ProductApp.Services;
 
 namespace ProductApp
 {
@@ -11,6 +12,8 @@ namespace ProductApp
 
    // Add services to the container.
    builder.Services.AddControllersWithViews();
+   builder.Services.AddScoped<ICategoryService, CategoryService>();
+   builder.Services.AddScoped<IProductService, ProductService>();
    builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
    var app = builder.Build();

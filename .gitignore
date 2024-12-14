@@ -24,3 +24,4 @@ appsettings.Development.json
 
 # Ignore publish output
 publish/
+/.vs
